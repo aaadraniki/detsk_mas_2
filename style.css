@@ -1,0 +1,459 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+*:focus {
+    outline-style: none;
+    outline-width: 0px !important;
+    outline-color: none !important;
+}
+*::selection 
+{
+    background-color:transparent;
+} 
+*::-moz-selection
+{
+    background-color:transparent;
+}
+*
+{        
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
+    /*You just need this if you are only concerned with android and not desktop browsers.*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}    
+input[type="text"], textarea, [contenteditable]
+{
+
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  line-height: 1.4;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  overflow: hidden;
+  margin: 0 ;
+}
+
+.site-content {
+  padding-top: 66px;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+  color: #fff;
+  background-color: #99C4C8;
+}
+
+.header__logo {
+  font-weight: 700;
+  padding: 0 25px;
+  float: left;
+}
+
+/* MENU */
+.menu {
+  float: right;
+  margin-right: 25px;
+}
+.menu a {
+  padding: 0 10px;
+}
+
+/*LOGO*/
+.logo{
+  width: 100%;
+  height: calc(100vh - 66px);
+  background-image: url(img/logo.jpg);
+  background-size: cover;
+  background-position: center;
+
+}
+.logo_info{
+  padding-top: 30vh;
+  height: auto;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_text{
+  text-align: center;
+  color: white;
+  padding-bottom: 30px;
+}
+.logo_text h1{
+  font-size: 65px;
+  padding-bottom: 15px;
+}
+
+.logo_buttons{
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+.logo_buttons a:first-child{
+    background: #99C4C8;
+}
+.logo_buttons a{
+  border-radius: 11px;
+  color: #ffffff;
+  font-size: 20px;
+  background: transparent;
+  padding: 5px 15px 5px 15px;
+  border: solid #99C4C8 3px;
+  text-decoration: none;
+  margin: 0 15px;
+}
+.logo_buttons a:hover{
+  background: #C6DCE4;
+  border-color: #C6DCE4;
+}
+/*advantages*/
+.advantages{
+  margin: auto;
+  width: 100%;
+   height: auto;
+}
+.advantages_flex{
+   height: auto;
+   width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.advantages_card{
+  width: 280px;
+  padding: 20px 10px;
+  border: 2px solid #2b6684;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.advantages h2{
+  margin-top: 50px;
+  text-align: center;
+  color: #2b6684;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.advantages_card_img{
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  background-position: center;
+  background-size: cover;
+
+}
+.aci1{
+  background-image: url(img/chat.png);
+}
+.aci2{
+  background-image: url(img/user.png);
+}
+.aci3{
+  background-image: url(img/mortarboard.png);
+}
+.aci4{
+  background-image: url(img/sedan.png);
+}
+.advantages_card_txt{
+  text-align: center;
+  font-size: 20px;
+}
+
+/*ABOUT ME*/
+.about_me{
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+.about_me h2{
+  text-align: center;
+  color: #2b6684;
+  font-size: 30px;
+  margin: 30px 0;
+}
+.about_me_flex{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.briefly{
+  width: 100%;
+  height: auto;
+   background: #99C4C8;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+.briefly h5{
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+.margin{
+  margin-top: 20px;
+}
+.about_me_flex_txt{
+  font-size: 20px;
+}
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Читать далее';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Скрыть';
+
+}
+
+.read-more-trigger {
+  margin-top: 25px;
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  border-radius: 11px;
+  color: #99C4C8;
+  font-size: 20px;
+  background: transparent;
+  padding: 5px 15px 5px 15px;
+  border: solid #99C4C8 3px;
+  text-decoration: none;
+}
+.hide{
+  display: block;
+}
+.read-more-state:checked ~ .read-more-trigger {
+    background: #99C4C8;
+  color: white;
+}
+
+/*SERVICE*/
+.serv{
+  width: 100%;
+  height: auto;
+  background: #e6f1f5;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+.serv h2{
+  text-align: center;
+  color: #2b6684;
+  font-size: 30px;
+  margin: 30px 0;
+}
+.serv_flex{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.serv_flex_card{
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 10px;
+    cursor: pointer;
+}
+/*CONTACT*/
+.contact{
+  width: 100%;
+  height: auto;
+}
+.contact h2{
+   text-align: center;
+  color: #2b6684;
+  font-size: 30px;
+  margin: 30px 0;
+}
+.contact_flex{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.contact_flex_card{
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.icon{
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  background-position: center;
+}
+.text{
+  font-size: 18px;
+}
+.i1{
+  background-image: url(img/phone-call.png);
+}
+.i2{
+  background-image: url(img/email.png);
+}
+.i3{
+  background-image: url(img/instagram.png);
+}
+/*FOOTER*/
+.footer{
+  margin-top: 30px;
+  width: 100%;
+  background-color: #e6f1f5;
+}
+footer{
+  color: gray;
+  padding: 20px;
+}
+/* RESPONSIVE */
+@media only screen and (max-width: 768px) {
+  .logo_text h1{
+  font-size: 45px;
+}
+.logo_info{
+  padding-top: 15vh;
+}
+.briefly{
+  align-self: center;
+}
+  .site-pusher,
+  .site-container {
+    height: 100%;
+  }
+
+  .site-container {
+    overflow: hidden;
+  }
+
+  .site-pusher {
+    transition-duration: 0.3s;
+    transform: translateX(0px);
+  }
+
+  .site-content {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header {
+    position: static;
+  }
+
+  .header__icon {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 66px;
+    cursor: pointer;
+  }
+  .header__icon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 0;
+    top: 16px;
+    left: 15px;
+    box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
+  }
+
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #99C4C8;
+    width: 250px;
+    transform: translateX(-250px);
+  }
+  .menu a {
+    display: block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #DAEAF1;
+  }
+
+  .with--sidebar .site-pusher {
+    transform: translateX(250px);
+  }
+  .with--sidebar .site-cache {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
